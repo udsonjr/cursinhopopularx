@@ -1,6 +1,9 @@
 function HomePage() {
     return (
-        <p>OPA</p>
+        <>
+            <p>OPA</p>
+            <p>TUDO BOM?</p>
+        </>
     )
 }
 
