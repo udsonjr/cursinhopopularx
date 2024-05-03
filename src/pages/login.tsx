@@ -1,10 +1,7 @@
-import MainContainer from "@/components/MainContainer"
+import '../app/globals.css'
 
 export default function Contact() {
     return (
-        <MainContainer>
-            <h1>Login</h1>
-        </MainContainer>
-        
+        <h1>Login</h1>        
     )
 }
