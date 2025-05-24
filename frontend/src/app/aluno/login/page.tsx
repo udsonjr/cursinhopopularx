@@ -2,24 +2,29 @@ import '../../../styles/globals.css'
 import styles from '../../../styles/Login.module.css'
 import logo from '../../../../public/images/logo-completo.png'
 import Image from 'next/image'
-import { TextField, Button } from '@mui/material';
+import StyledTextField from '@/components/StyledTextField';
+import StyledButton from '@/components/StyledButton';
+import { Link } from '@mui/material';
+import colors from '@/theme/colors';
 
 export default function Login() {
     return (
-        <div className={styles.centralized}>
+        <div className={styles.centralized} style={{backgroundColor: colors.background}}>
             <Image src={logo} alt='Logo' height={200}/>
-            <TextField 
+
+            <StyledTextField 
                 required
                 id='login-id-input'
                 label="RA ou e-mail"
             />
-            <TextField 
+            <StyledTextField 
                 id='login-password-input'
                 label="Senha"
                 type='password'
                 autoComplete='currentPassword'
             />
-            <Button variant="contained">Login</Button>
+            <StyledButton variant="contained" type="button" color="primary">Login</StyledButton>
+            <Link color={colors.primary} underline='hover'>Esqueci minha senha</Link>
         </div>
     )
 }
