@@ -24,18 +24,18 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-
-    #   - name: 🔨 Rodar os testes
-    #     working-directory: ./backend
-    #     run: mvn test 
-
-      - name: Build com Maven (sem testes por enquanto)
+    
+      - name: 🔨 Build do backend (sem testes por enquanto)
         working-directory: ./backend
         run: mvn clean package -DskipTests
 
-    #   - name: 🔨 Build com Maven
+    #   - name: 🔨 Build do backend
     #     working-directory: ./backend
     #     run: mvn clean package
+
+    #   - name: ✅ Rodar os testes do backend
+    #     working-directory: ./backend
+    #     run: mvn test 
 
       - name: 📦 Armazenar artefato (JAR)
         uses: actions/upload-artifact@v4
@@ -43,12 +43,10 @@ jobs:
           name: backend-jar
           path: target/*.jar
 
-
-      # Build do frontend
-      - name: 🧩 Instalar dependências do frontend
+      - name: 🧩 Build do frontend
         working-directory: ./frontend
         run: npm ci
 
       - name: ✅ Rodar os testes do frontend
         working-directory: ./frontend
-        run: npm test -- --ci --passWithNoTests
+        run: npm test 
