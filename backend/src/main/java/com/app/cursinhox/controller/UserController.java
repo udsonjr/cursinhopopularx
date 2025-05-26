@@ -3,7 +3,6 @@ package com.app.cursinhox.controller;
 import com.app.cursinhox.dto.*;
 import com.app.cursinhox.service.*;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
